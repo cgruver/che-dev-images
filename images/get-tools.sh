@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 MAVEN_VERSION=${MAVEN_VERSION:=3.8.8}
 QUARKUS_VERSION=${QUARKUS_VERSION:=3.2.4.Final}
 NODE_VERSION=${NODE_VERSION:=v18.17.1}
@@ -98,4 +100,4 @@ ln -s ../quarkus-cli/bin/quarkus quarkus
 ln -s ../maven/bin/mvn mvn
 ln -s /projects/bin/oc oc
 ln -s /projects/bin/kubectl kubectl
-cd -
+
