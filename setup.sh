@@ -11,3 +11,4 @@ oc start-build dev-workspace-image-base -n che-dev-images -w -F
 oc start-build dev-workspace-image-vfs -n che-dev-images -w -F
 oc start-build dev-workspace-image-fuse -n che-dev-images -w -F
 oc start-build dev-workspace-image-nested -n che-dev-images -w -F
+oc start-build dev-podman-image -n che-dev-images -w -F

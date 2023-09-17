@@ -67,7 +67,7 @@ spec:
     contextDir: "images"
   strategy:
     dockerStrategy:
-      dockerfilePath: "./che-dev-workspace-nested.Containerfile"
+      dockerfilePath: "./che-dev-workspace-base.Containerfile"
   output:
     to:
       kind: ImageStreamTag
