@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: che-dev-images
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: dev-tools-image
+  namespace: che-dev-images
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: dev-tools-image
+  namespace: che-dev-images
+spec:
+  source:
+    git:
+      uri: https://github.com/cgruver/che-dev-images.git
+      ref: main
+    contextDir: "images"
+  strategy:
+    dockerStrategy:
+      dockerfilePath: "./che-dev-tools.Containerfile"
+  output:
+    to:
+      kind: ImageStreamTag
+      name: dev-tools-image:latest
