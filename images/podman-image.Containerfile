@@ -16,7 +16,7 @@ RUN microdnf --disableplugin=subscription-manager install -y openssl compat-open
     chgrp -R 0 /home ; \
     mkdir -p ${HOME}/.config/containers ; \
     mkdir ${HOME}/proc ; \
-    (echo "[containers]";echo "netns=\"private\"";echo "volumes=[";echo "  \"${HOME}/proc:/proc:rw\"";echo "]";echo "default_sysctls = []";echo "[engine]";echo "network_cmd_options=[";echo "  \"enable_ipv6=false\"";echo "]") > ${HOME}/.config/containers/containers.conf
+    (echo "[containers]";echo "netns=\"private\"";echo "volumes=[";echo "  \"${HOME}/proc:/proc:rw\"";echo "]";echo "default_sysctls = []";echo "[engine]";echo "network_cmd_options=[";echo "  \"enable_ipv6=false\"";echo "]") > ${HOME}/.config/containers/containers.conf ; \
     setcap cap_setuid+ep /usr/bin/newuidmap ; \
     setcap cap_setgid+ep /usr/bin/newgidmap ; \
     touch /etc/subgid /etc/subuid ; \
