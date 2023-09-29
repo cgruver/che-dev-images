@@ -7,7 +7,7 @@ ENV BUILDAH_ISOLATION=chroot
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 ENV GRAALVM_HOME=/usr/local/tools/graalvm
 ENV JAVA_HOME=/etc/alternatives/jre_17_openjdk
-ENV PATH=${PATH}:/usr/local/tools/bin:/usr/local/tools/node/bin
+ENV PATH=${PATH}:/usr/local/tools/bin:/usr/local/tools/node/bin:/usr/local/tools/go/bin
 ENV JBANG_DIR=/usr/local/tools/jbang
 COPY --from=image-registry.openshift-image-registry.svc:5000/che-dev-images/dev-tools-image:latest /tools/ /usr/local/tools
 COPY --chown=0:0 entrypoint.sh /
